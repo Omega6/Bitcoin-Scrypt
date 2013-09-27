@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'aboutdialog.ui'
 **
-** Created: Sun 8. Sep 06:42:48 2013
+** Created: Fri 27. Sep 09:24:10 2013
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -75,7 +75,7 @@ public:
         versionLabel = new QLabel(AboutDialog);
         versionLabel->setObjectName(QString::fromUtf8("versionLabel"));
         versionLabel->setCursor(QCursor(Qt::IBeamCursor));
-        versionLabel->setText(QString::fromUtf8("1.0"));
+        versionLabel->setText(QString::fromUtf8("1.1"));
         versionLabel->setTextFormat(Qt::RichText);
         versionLabel->setTextInteractionFlags(Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse);
 
@@ -121,11 +121,11 @@ public:
     void retranslateUi(QDialog *AboutDialog)
     {
         AboutDialog->setWindowTitle(QApplication::translate("AboutDialog", "About Bitcoin", 0, QApplication::UnicodeUTF8));
-        label->setText(QApplication::translate("AboutDialog", "<b>Bitcoin</b> version", 0, QApplication::UnicodeUTF8));
+        label->setText(QApplication::translate("AboutDialog", "<b>Bitcoin_Scrypt</b> version", 0, QApplication::UnicodeUTF8));
         label_2->setText(QApplication::translate("AboutDialog", "\n"
 "          Copyright \302\251 2013-2014 Bitcoin Scrypt Developers\n"
 "		  \n"
-"		  An ASIC Proof Bitcoin Release\n"
+"		  A faster and ASIC Proof Bitcoin Release\n"
 "\n"
 "          Website: bitcoinscrypt.org\n"
 "        ", 0, QApplication::UnicodeUTF8));
