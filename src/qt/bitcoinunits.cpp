@@ -45,13 +45,13 @@ QString BitcoinUnits::description(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("Bitcoin");
-    case mBTC: return QString("milliBitcoin (1 / 1,000)");
-    case uBTC: return QString("microBitcoin (1 / 1,000,000)");
+    case BTC: return QString("Bitcoin-sCrypt");
+    case mBTC: return QString("milliBitcoin-sCrypt (1 / 1,000)");
+    case uBTC: return QString("microBitcoin-sCrypt (1 / 1,000,000)");
     default: return QString("???");
     }
 }
-//a single unit (.00000001) of Bitcoin is called a "wander."
+//a single unit (.00000001) of Bitcoin-sCrypt is called a "wander."
 qint64 BitcoinUnits::factor(int unit)
 {
     switch(unit)

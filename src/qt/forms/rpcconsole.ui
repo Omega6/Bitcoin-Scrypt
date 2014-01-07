@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Bitcoin - Debug window</string>
+   <string>Bitcoin-sCrypt - Debug window</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
@@ -322,7 +322,7 @@
        <item row="15" column="0">
         <widget class="QPushButton" name="openDebugLogfileButton">
          <property name="toolTip">
-          <string>Open the Bitcoin debug logfile from the current data directory. This can take a few seconds for large logfiles.</string>
+          <string>Open the Bitcoin-sCrypt debug logfile from the current data directory. This can take a few seconds for large logfiles.</string>
          </property>
          <property name="text">
           <string>&amp;Open</string>

@@ -109,7 +109,7 @@ static std::string Translate(const char* psz)
 static void handleRunawayException(std::exception *e)
 {
     PrintExceptionContinue(e, "Runaway exception");
-    QMessageBox::critical(0, "Runaway exception", BitcoinGUI::tr("A fatal error occured. Bitcoin can no longer continue safely and will quit.") + QString("\n\n") + QString::fromStdString(strMiscWarning));
+    QMessageBox::critical(0, "Runaway exception", BitcoinGUI::tr("A fatal error occured. Bitcoin-sCrypt can no longer continue safely and will quit.") + QString("\n\n") + QString::fromStdString(strMiscWarning));
     exit(1);
 }
 
@@ -130,7 +130,7 @@ int main(int argc, char *argv[])
                     // if URI could be sent to the message queue exit here
                     exit(0);
                 else
-                    // if URI could not be sent to the message queue do a normal Bitcoin-Qt startup
+                    // if URI could not be sent to the message queue do a normal Bitcoin-sCrypt-Qt startup
                     break;
             }
             catch (boost::interprocess::interprocess_exception &ex) {
@@ -169,12 +169,12 @@ int main(int argc, char *argv[])
 
     // Application identification (must be set before OptionsModel is initialized,
     // as it is used to locate QSettings)
-    app.setOrganizationName("Bitcoin");
-    app.setOrganizationDomain("we-have-no-domain-yet.nex");
+    app.setOrganizationName("Bitcoin-sCrypt");
+    app.setOrganizationDomain("bitcoinscrypt.org");
     if(GetBoolArg("-testnet")) // Separate UI settings for testnet
-        app.setApplicationName("bitcoin-qt-testnet");
+        app.setApplicationName("bitcoin-scrypt-qt-testnet");
     else
-        app.setApplicationName("bitcoin-qt");
+        app.setApplicationName("bitcoin-scrypt-qt");
 
     // ... then GUI settings:
     OptionsModel optionsModel;
@@ -299,7 +299,7 @@ int main(int argc, char *argv[])
                 window.setWalletModel(0);
                 guiref = 0;
             }
-            // Shutdown the core and it's threads, but don't exit Bitcoin-Qt here
+            // Shutdown the core and it's threads, but don't exit Bitcoin-sCrypt-Qt here
             Shutdown(NULL);
         }
         else

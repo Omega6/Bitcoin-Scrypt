@@ -1,6 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2012 The Bitcoin developers
+// Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2011-2012 Litecoin Developers
+// Copyright (c) 2013-2014 Omega6, Smokeasy, CaptChadd
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -50,7 +51,7 @@ map<uint256, map<uint256, CDataStream*> > mapOrphanTransactionsByPrev;
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "Bitcoin Signed Message:\n";
+const string strMessageMagic = "Bitcoin-sCrypt Signed Message:\n";
 
 double dHashesPerSec;
 int64 nHPSTimerStart;
@@ -826,8 +827,17 @@ uint256 static GetOrphanRoot(const CBlock* pblock)
     return pblock->GetHash();
 }
 
+
+static int64 nTargetTimespan = 60 * 2; 
+static int64 nTargetSpacing = 60 * 2; 
+static int64 nInterval = nTargetTimespan / nTargetSpacing;
+
+
+
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
+    
+        
     int64 nSubsidy = 50 * COIN;
 
     // Subsidy is cut in half every 4 years
@@ -836,9 +846,8 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 60 * 2; // 
-static const int64 nTargetSpacing = 120; // 2 minute Blocks, Difficulty retarget every 2 blocks.
-static const int64 nInterval = nTargetTimespan / nTargetSpacing;
+
+
 
 // Thanks: Balthazar for suggesting the following fix
 // https://bitcointalk.org/index.php?topic=182430.msg1904506#msg1904506
@@ -853,6 +862,8 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
 {
     // Testnet has min-difficulty blocks
     // after nTargetSpacing*2 time between blocks:
+    
+    
     if (fTestNet && nTime > nTargetSpacing*2)
         return bnProofOfWorkLimit.GetCompact();
 
@@ -862,7 +873,7 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
     {
         // Maximum 400% adjustment...
         bnResult *= 4;
-        // ... in best-case exactly 4-times-normal target time
+        // ... in best-case exactly 4-timeses-normal target time
         nTime -= nTargetTimespan*4;
     }
     if (bnResult > bnProofOfWorkLimit)
@@ -872,9 +883,26 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
 
 unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlock *pblock)
 {
+    if ((pindexLast->nHeight+1) > 16078)
+	{
+		nTargetTimespan = 120;
+		nTargetSpacing = 120;
+		nInterval = nTargetTimespan / nTargetSpacing;
+	}
+	else
+	{
+		nTargetTimespan = 14 * 24 * 60 * 60;
+		nTargetSpacing = 10 * 60;
+		nInterval = nTargetTimespan / nTargetSpacing;
+	}
+	
+    
+    //static const int64 nTargetTimespan = 14 * 24 * 60 * 60; // if nHeight<16079
+    //static const int64 nTargetSpacing = 10 * 60; // if nHeight<16079
+    
     unsigned int nProofOfWorkLimit = bnProofOfWorkLimit.GetCompact();
-
-    // Genesis block
+	
+	    // Genesis block
     if (pindexLast == NULL)
         return nProofOfWorkLimit;
 

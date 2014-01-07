@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2012 The Bitcoin developers
+// Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2011-2012 Litecoin Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -35,7 +35,7 @@ CPubKey CWallet::GenerateNewKey()
     CKey key;
     key.MakeNewKey(fCompressed);
 
-    // Compressed public keys were introduced in version 0.6.0
+    // Compressed public keys were introduced in version 1.0.0
     if (fCompressed)
         SetMinVersion(FEATURE_COMPRPUBKEY);
 
@@ -1295,7 +1295,7 @@ string CWallet::SendMoneyToDestination(const CTxDestination& address, int64 nVal
     if (nValue + nTransactionFee > GetBalance())
         return _("Insufficient funds");
 
-    // Parse Bitcoin address
+    // Parse Bitcoin-sCrypt address
     CScript scriptPubKey;
     scriptPubKey.SetDestination(address);
 

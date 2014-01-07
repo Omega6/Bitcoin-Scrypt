@@ -48,7 +48,7 @@ void OptionsModel::Init()
     nTransactionFee = settings.value("nTransactionFee").toLongLong();
     language = settings.value("language", "").toString();
 
-    // These are shared with core Bitcoin; we want
+    // These are shared with core Bitcoin-sCrypt; we want
     // command-line options to override the GUI settings:
     if (settings.contains("addrProxy") && settings.value("fUseProxy").toBool())
         SoftSetArg("-proxy", settings.value("addrProxy").toString().toStdString());

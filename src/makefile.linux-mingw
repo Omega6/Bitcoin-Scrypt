@@ -70,7 +70,7 @@ OBJS= \
     obj/walletdb.o \
     obj/noui.o
 
-all: bitcoin.exe
+all: Bitcoin-sCryptd.exe
 
 obj/scrypt.o: scrypt.c
 	i586-mingw32msvc-gcc -c $(CFLAGS) -o $@ $^
@@ -83,7 +83,7 @@ DEFS += -DHAVE_BUILD_INFO
 obj/%.o: %.cpp $(HEADERS)
 	i586-mingw32msvc-g++ -c $(CFLAGS) -o $@ $<
 
-bitcoin.exe: $(OBJS:obj/%=obj/%)
+Bitcoin-sCryptd.exe: $(OBJS:obj/%=obj/%)
 	i586-mingw32msvc-g++ $(CFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS)
 
 TESTOBJS := $(patsubst test/%.cpp,obj-test/%.o,$(wildcard test/*.cpp))
@@ -97,7 +97,7 @@ test_bitcoin.exe: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 
 clean:
 	-rm -f obj/*.o
-	-rm -f bitcoin.exe
+	-rm -f Bitcoin-sCryptd.exe
 	-rm -f obj-test/*.o
 	-rm -f test_bitcoin.exe
 	-rm -f src/build.h

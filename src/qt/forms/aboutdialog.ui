@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>About Bitcoin</string>
+   <string>About Bitcoin-sCrypt</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout_2">
    <item>
@@ -50,7 +50,7 @@
           <cursorShape>IBeamCursor</cursorShape>
          </property>
          <property name="text">
-          <string>&lt;b&gt;Bitcoin_Scrypt&lt;/b&gt; version</string>
+          <string>&lt;b&gt;Bitcoin-sCrypt&lt;/b&gt; version</string>
          </property>
          <property name="textInteractionFlags">
           <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -63,7 +63,7 @@
           <cursorShape>IBeamCursor</cursorShape>
          </property>
          <property name="text">
-          <string notr="true">1.1</string>
+          <string notr="true">1.2</string>
          </property>
          <property name="textFormat">
           <enum>Qt::RichText</enum>
@@ -95,9 +95,11 @@
        </property>
        <property name="text">
         <string>
-          Copyright © 2013-2014 Bitcoin Scrypt Developers
+          Copyright © 2010-2014 Bitcoin Developers
+          Distributed under the MIT/X11 software license
+          http://www.opensource.org/licenses/mit-license.php
 		  
-		  A faster and ASIC Proof Bitcoin Release
+		  An ASIC resistent Bitcoin Fork
 
           Website: bitcoinscrypt.org
         </string>
