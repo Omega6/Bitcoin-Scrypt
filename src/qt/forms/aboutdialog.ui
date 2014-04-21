@@ -95,13 +95,13 @@
        </property>
        <property name="text">
         <string>
-          Copyright © 2010-2014 Bitcoin Developers
+          Copyright © 2014 Bitcoin Scrypt Developer Community
           Distributed under the MIT/X11 software license
           http://www.opensource.org/licenses/mit-license.php
 		  
-		  An ASIC resistent Bitcoin Fork
+		  A digital currency mined by anyone, controlled by everyone.
 
-          Website: bitcoinscrypt.org
+          Website: http://www.bitcoinscrypt.org 
         </string>
        </property>
        <property name="wordWrap">

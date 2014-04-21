@@ -851,7 +851,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
 
 // Thanks: Balthazar for suggesting the following fix
 // https://bitcointalk.org/index.php?topic=182430.msg1904506#msg1904506
-static const int64 nReTargetHistoryFact = 4; // look at 4 times the retarget
+static const int64 nReTargetHistoryFact = 4; // look at 2 times the retarget
                                              // interval into the block history
 
 //
@@ -861,10 +861,10 @@ static const int64 nReTargetHistoryFact = 4; // look at 4 times the retarget
 unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
 {
     // Testnet has min-difficulty blocks
-    // after nTargetSpacing*2 time between blocks:
+    // after nTargetSpacing*4 time between blocks:
     
     
-    if (fTestNet && nTime > nTargetSpacing*2)
+    if (fTestNet && nTime > nTargetSpacing*4)
         return bnProofOfWorkLimit.GetCompact();
 
     CBigNum bnResult;
@@ -873,7 +873,7 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
     {
         // Maximum 400% adjustment...
         bnResult *= 4;
-        // ... in best-case exactly 4-timeses-normal target time
+        // ... in best-case exactly 2-times-normal target time
         nTime -= nTargetTimespan*4;
     }
     if (bnResult > bnProofOfWorkLimit)
@@ -883,7 +883,14 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
 
 unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlock *pblock)
 {
-    if ((pindexLast->nHeight+1) > 16078)
+    if ((pindexLast->nHeight+1) > 95600)
+	{
+		nTargetTimespan = 3.5 * 24 * 60 * 60;
+		nTargetSpacing = 2 * 60;
+		nInterval = nTargetTimespan / nTargetSpacing;
+	}
+	
+	if ((pindexLast->nHeight+1) > 16078)
 	{
 		nTargetTimespan = 120;
 		nTargetSpacing = 120;
