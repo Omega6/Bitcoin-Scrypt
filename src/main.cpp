@@ -851,7 +851,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
 
 // Thanks: Balthazar for suggesting the following fix
 // https://bitcointalk.org/index.php?topic=182430.msg1904506#msg1904506
-static const int64 nReTargetHistoryFact = 4; // look at 2 times the retarget
+static const int64 nReTargetHistoryFact = 4; // look at 4 times the retarget
                                              // interval into the block history
 
 //
@@ -873,7 +873,7 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
     {
         // Maximum 400% adjustment...
         bnResult *= 4;
-        // ... in best-case exactly 2-times-normal target time
+        // ... in best-case exactly 4-times-normal target time
         nTime -= nTargetTimespan*4;
     }
     if (bnResult > bnProofOfWorkLimit)
@@ -890,7 +890,7 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
 		nInterval = nTargetTimespan / nTargetSpacing;
 	}
 	
-	if ((pindexLast->nHeight+1) > 16078)
+	else if ((pindexLast->nHeight+1) > 16078)
 	{
 		nTargetTimespan = 120;
 		nTargetSpacing = 120;
