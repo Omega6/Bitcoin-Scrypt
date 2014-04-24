@@ -998,7 +998,10 @@ void ThreadSocketHandler2(void* parg)
 // The second name should resolve to a list of seed addresses.
 static const char *strDNSSeed[][2] = {
     {"CC Seednode", "31.193.130.77"},
-    //{"CaptChadd Seednode", "31.193.130.77"},
+    {"EU Seednode", "37.59.0.211"},
+    {"US Seednode", "54.201.183.106"},
+    {"Seednode", "14.18.204.41"},
+    //{"CC Seednode", "31.193.130.77"},
     //{"31-193-130-77.static.as29550.net", "31-193-130-77.static.as29550.net"},
 };
 

@@ -5,7 +5,7 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 1.2.0
+!define VERSION 1.3.1
 !define COMPANY "Bitcoin sCrypt"
 !define URL http://www.bitcoinscrypt.org/
 
@@ -45,13 +45,13 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile Bitcoin-sCrypt-1.2.0-win32-setup.exe
+OutFile Bitcoin-sCrypt-1.3.1-win32-setup.exe
 InstallDir $PROGRAMFILES\Bitcoin-sCrypt
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
-VIProductVersion 1.2.0.0
+VIProductVersion 1.3.1.0
 VIAddVersionKey ProductName Bitcoin-sCrypt
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"

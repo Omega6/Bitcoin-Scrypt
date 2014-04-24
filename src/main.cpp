@@ -828,10 +828,6 @@ uint256 static GetOrphanRoot(const CBlock* pblock)
 }
 
 
-static int64 nTargetTimespan = 60 * 2; 
-static int64 nTargetSpacing = 60 * 2; 
-static int64 nInterval = nTargetTimespan / nTargetSpacing;
-
 
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
@@ -846,7 +842,13 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     return nSubsidy + nFees;
 }
 
+int64 nTargetTimespan = 60 * 2; 
+static int64 nTargetSpacing = 60 * 2; 
+static int64 nInterval = nTargetTimespan / nTargetSpacing;
 
+// static int64 nTargetTimespan = 3.5 * 24 * 60 * 60;  // Replace above post-1.3.1
+// static int64 nTargetSpacing = 60 * 2;  // Replace above post-1.3.1
+// static int64 nInterval = nTargetTimespan / nTargetSpacing; // Replace above post-1.3.1
 
 
 // Thanks: Balthazar for suggesting the following fix
@@ -883,25 +885,25 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
 
 unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlock *pblock)
 {
-    if ((pindexLast->nHeight+1) > 95600)
-	{
-		nTargetTimespan = 3.5 * 24 * 60 * 60;
-		nTargetSpacing = 2 * 60;
-		nInterval = nTargetTimespan / nTargetSpacing;
-	}
-	
-	else if ((pindexLast->nHeight+1) > 16078)
-	{
-		nTargetTimespan = 120;
-		nTargetSpacing = 120;
-		nInterval = nTargetTimespan / nTargetSpacing;
-	}
-	else
-	{
-		nTargetTimespan = 14 * 24 * 60 * 60;
-		nTargetSpacing = 10 * 60;
-		nInterval = nTargetTimespan / nTargetSpacing;
-	}
+    if ((pindexLast->nHeight+1) > 96250)
+		{
+			nTargetTimespan = 3.5 * 24 * 60 * 60;
+			nTargetSpacing = 2 * 60;
+			nInterval = nTargetTimespan / nTargetSpacing;
+		}
+		
+		else if ((pindexLast->nHeight+1) > 16078)
+		{
+			nTargetTimespan = 120;
+			nTargetSpacing = 120;
+			nInterval = nTargetTimespan / nTargetSpacing;
+		}
+		else
+		{
+			nTargetTimespan = 14 * 24 * 60 * 60;
+			nTargetSpacing = 10 * 60;
+			nInterval = nTargetTimespan / nTargetSpacing;
+		}
 	
     
     //static const int64 nTargetTimespan = 14 * 24 * 60 * 60; // if nHeight<16079
