@@ -63,7 +63,7 @@
           <cursorShape>IBeamCursor</cursorShape>
          </property>
          <property name="text">
-          <string notr="true">1.2</string>
+          <string notr="true">1.3.1</string>
          </property>
          <property name="textFormat">
           <enum>Qt::RichText</enum>
@@ -99,9 +99,11 @@
           Distributed under the MIT/X11 software license
           http://www.opensource.org/licenses/mit-license.php
 		  
-		  A digital currency mined by anyone, controlled by everyone.
+		  A digital currency mined by anyone,
+                                                                         controlled by everyone.
 
           Website: http://www.bitcoinscrypt.org 
+          Info Hub: http://theotherbitcoin.com
         </string>
        </property>
        <property name="wordWrap">
