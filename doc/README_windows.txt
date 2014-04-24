@@ -1,4 +1,4 @@
-Bitcoin sCrypt v1.2.0 BETA
+Bitcoin sCrypt v1.3.1 BETA
 
 Copyright (c) 2009-2014 Bitcoin Developers
 Copyright (c) 2011-2012 Litecoin Developers
