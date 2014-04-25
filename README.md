@@ -22,8 +22,8 @@ Amended for Bitcoin-sCrypt by Smokeasy from Gavin's Notes to getting gitian buil
 # Clone local copies of bitcoin-scrypt and gitian source-codes
 
 4. Enter Ubuntu terminal
-5. git clone git://github.com/Omega6/bitcoin.git bitcoin
-    (OR use mirror:  git clone git://github.com/bitcoin-scrypt/bitcoin-scrypt.git bitcoin)
+5. git clone git://github.com/bitcoin-scrypt/bitcoin-scrypt.git bitcoin
+    (OR use mirror:  git clone git://github.com/Omega6/bitcoin-scrypt.git bitcoin)
 6. git clone git://github.com/devrandom/gitian-builder.git gitian
 7. mkdir gitian/inputs
 8. zip -r gitian/inputs/bitcoin-1.3.1.zip bitcoin
