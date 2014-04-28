@@ -1,4 +1,4 @@
-Bitcoin - sCrypt v1.3.1-beta
+Bitcoin - sCrypt v1.3.2-beta
 
 ## HOW TO COMPILE GITIAN BUILD OF BITCOIN-SCRYPT QT CLIENT FOR WINDOWS
 
@@ -26,7 +26,7 @@ Amended for Bitcoin-sCrypt by Smokeasy from Gavin's Notes to getting gitian buil
     (OR use mirror:  git clone git://github.com/Omega6/bitcoin-scrypt.git bitcoin)
 6. git clone git://github.com/devrandom/gitian-builder.git gitian
 7. mkdir gitian/inputs
-8. zip -r gitian/inputs/bitcoin-1.3.1.zip bitcoin
+8. zip -r gitian/inputs/bitcoin-1.3.2.zip bitcoin
 9. cd gitian/inputs
 
 # Fetch and build inputs
@@ -52,7 +52,7 @@ Amended for Bitcoin-sCrypt by Smokeasy from Gavin's Notes to getting gitian buil
 22. sudo bin/gbuild ../bitcoin/contrib/gitian-descriptors/boost-win32.yml
 23. cp build/out/boost-win32-1.49.0-gitian2.zip inputs
 24. sudo bin/gbuild ../bitcoin/contrib/gitian-descriptors/deps-win32.yml
-25. cp build/out/bitcoin-deps-1.3.1.zip inputs
+25. cp build/out/bitcoin-deps-1.3.2.zip inputs
 26. sudo bin/gbuild ../bitcoin/contrib/gitian-descriptors/gitian-win32.yml
 
 ## The compiled Windows GUI client, daemon and Windows Installer binaries (along with the source-code) will output to gitian/build/out.

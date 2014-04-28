@@ -15,8 +15,8 @@ remotes: []
 files:
 - "qt-win32-4.7.4-gitian.zip"
 - "boost-win32-1.49.0-gitian2.zip"
-- "bitcoin-deps-1.3.1.zip"
-- "bitcoin-1.3.1.zip"
+- "bitcoin-deps-1.3.2.zip"
+- "bitcoin-1.3.2.zip"
 
 script: |
   #
@@ -41,11 +41,11 @@ script: |
   mv include/boost .
   cd ..
   #
-  unzip bitcoin-deps-1.3.1.zip
+  unzip bitcoin-deps-1.3.2.zip
   #
   find -type f | xargs touch --date="$REFERENCE_DATETIME"
   #
-  unzip bitcoin-1.3.1.zip
+  unzip bitcoin-1.3.2.zip
   cp -r bitcoin $OUTDIR/src
   cp -r bitcoin nsis
   cd bitcoin

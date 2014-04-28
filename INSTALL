@@ -2,7 +2,7 @@ Building Bitcoin-sCrypt
 
 See doc/readme-qt.rst for instructions on building Bitcoin-sCrypt,
 the intended-for-end-users, nice-graphical-interface, reference
-implementation of Bitcoin.
+implementation of Bitcoin-sCrypt.
 
 See doc/build-*.txt for instructions on building bitcoin-scryptd,
 the intended-for-services, no-graphical-interface, reference
