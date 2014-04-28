@@ -1,7 +1,7 @@
+// Copyright (c) 2013-2014 The Bitcoin sCrypt developers
+// Copyright (c) 2009-2013 The Bitcoin developers
+// Copyright (c) 2011-2012 The Litecoin developers
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2011-2012 Litecoin Developers
-// Copyright (c) 2013-2014 Omega6, Smokeasy, CaptChadd
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -846,9 +846,9 @@ static int64 nTargetTimespan = 60 * 2;
 static int64 nTargetSpacing = 60 * 2; 
 static int64 nInterval = nTargetTimespan / nTargetSpacing;
 
-// static int64 nTargetTimespan = 3.5 * 24 * 60 * 60;  // Replace above post-1.3.1
-// static int64 nTargetSpacing = 60 * 2;  // Replace above post-1.3.1
-// static int64 nInterval = nTargetTimespan / nTargetSpacing; // Replace above post-1.3.1
+// static int64 nTargetTimespan = 3.5 * 24 * 60 * 60;  // Replace above post-1.3.2
+// static int64 nTargetSpacing = 60 * 2;  // Replace above post-1.3.2
+// static int64 nInterval = nTargetTimespan / nTargetSpacing; // Replace above post-1.3.2
 
 
 // Thanks: Balthazar for suggesting the following fix
@@ -885,7 +885,7 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
 
 unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlock *pblock)
 {
-	if ((pindexLast->nHeight+1) > 96250)
+	if ((pindexLast->nHeight+1) > 96000)
 	{
 		nTargetTimespan = 3.5 * 24 * 60 * 60;
 		nTargetSpacing = 2 * 60;
@@ -893,8 +893,8 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
 	}
 	else if ((pindexLast->nHeight+1) > 16078)
 	{
-		nTargetTimespan = 120;
-		nTargetSpacing = 120;
+		nTargetTimespan = 2 * 60;
+		nTargetSpacing = 2 * 60;
 		nInterval = nTargetTimespan / nTargetSpacing;
 	}
 	else
