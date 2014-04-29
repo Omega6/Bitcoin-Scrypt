@@ -29,7 +29,7 @@ install DVD, but if not, you can get the current version from https://developer.
 
 1.  Clone the github tree to get the source code:
 
-git clone https://github.com/Smokeasy/Bitcoin-sCrypt.git
+git clone https://github.com/Bitcoin-sCrypt/Bitcoin-sCrypt.git
 
 2.  Download and install MacPorts from http://www.macports.org/
 

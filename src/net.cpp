@@ -1,6 +1,7 @@
+// Copyright (c) 2013-2014 The Bitcoin sCrypt developers
+// Copyright (c) 2009-2013 The Bitcoin developers
+// Copyright (c) 2011-2012 The Litecoin developers
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2011-2012 Litecoin Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -1001,6 +1002,9 @@ static const char *strDNSSeed[][2] = {
     {"EU Seednode", "37.59.0.211"},
     {"US Seednode", "54.201.183.106"},
     {"Seednode", "14.18.204.41"},
+    {"TOB Seednode", "204.11.58.222"},
+    {"NY Seednode", "107.170.4.109"},
+    {"UK Seednode", "77.101.93.241"},
     //{"CC Seednode", "31.193.130.77"},
     //{"31-193-130-77.static.as29550.net", "31-193-130-77.static.as29550.net"},
 };

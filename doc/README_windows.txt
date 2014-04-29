@@ -1,6 +1,7 @@
-Bitcoin sCrypt v1.3.1 BETA
+Bitcoin sCrypt v1.3.2 BETA
 
-Copyright (c) 2009-2014 Bitcoin Developers
+Copyright (c) 2013-2014 Bitcoin sCrypt Developers
+Copyright (c) 2009-2013 Bitcoin Developers
 Copyright (c) 2011-2012 Litecoin Developers
 Distributed under the MIT/X11 software license, see the accompanying
 file COPYING or http://www.opensource.org/licenses/mit-license.php.

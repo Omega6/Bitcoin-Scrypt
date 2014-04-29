@@ -2,8 +2,9 @@
  * Qt4 bitcoin GUI.
  *
  * W.J. van der Laan 2011-2012
+ * The Bitcoin sCrypt Developers 2013-2014
  * The Bitcoin Developers 2011-2012
- * The Litecoin Developers 201-2013
+ * The Litecoin Developers 2011-2013
  */
 #include "bitcoingui.h"
 #include "transactiontablemodel.h"

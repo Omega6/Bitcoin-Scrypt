@@ -23,7 +23,7 @@ remotes: []
 files:
 - "miniupnpc-1.6.tar.gz"
 - "qrencode-3.2.0.tar.bz2"
-- "bitcoin-1.3.1.zip"
+- "bitcoin-1.3.2.zip"
 script: |
   INSTDIR="$HOME/install"
   export LIBRARY_PATH="$INSTDIR/lib"
@@ -39,7 +39,7 @@ script: |
   make $MAKEOPTS install
   cd ..
   #
-  unzip bitcoin-1.3.1.zip
+  unzip bitcoin-1.3.2.zip
   cp -r bitcoin $OUTDIR/src
   cp -r bitcoin nsis
   cd bitcoin
