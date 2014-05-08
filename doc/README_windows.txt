@@ -1,4 +1,4 @@
-Bitcoin sCrypt v1.3.2 BETA
+Bitcoin sCrypt v1.3.3 BETA
 
 Copyright (c) 2013-2014 Bitcoin sCrypt Developers
 Copyright (c) 2009-2013 Bitcoin Developers

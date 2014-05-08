@@ -842,13 +842,13 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     return nSubsidy + nFees;
 }
 
-static int64 nTargetTimespan = 60 * 2; 
+static int64 nTargetTimespan = 3.5 * 24 * 60 * 60; 
 static int64 nTargetSpacing = 60 * 2; 
 static int64 nInterval = nTargetTimespan / nTargetSpacing;
 
-// static int64 nTargetTimespan = 3.5 * 24 * 60 * 60;  // Replace above post-1.3.2
-// static int64 nTargetSpacing = 60 * 2;  // Replace above post-1.3.2
-// static int64 nInterval = nTargetTimespan / nTargetSpacing; // Replace above post-1.3.2
+// static int64 nTargetTimespan = 60 * 60;  // Replace above post-1.3.3
+// static int64 nTargetSpacing = 60 * 2;  // Replace above post-1.3.3
+// static int64 nInterval = nTargetTimespan / nTargetSpacing; // Replace above post-1.3.3
 
 
 // Thanks: Balthazar for suggesting the following fix
@@ -885,7 +885,13 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
 
 unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlock *pblock)
 {
-	if ((pindexLast->nHeight+1) > 96000)
+	if ((pindexLast->nHeight+1) > 96180)
+	{
+		nTargetTimespan = 60 * 60;
+		nTargetSpacing = 2 * 60;
+		nInterval = nTargetTimespan / nTargetSpacing;
+	}
+	else if ((pindexLast->nHeight+1) > 96000)
 	{
 		nTargetTimespan = 3.5 * 24 * 60 * 60;
 		nTargetSpacing = 2 * 60;
@@ -2469,7 +2475,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
             pfrom->addrLocal = addrMe;
             SeenLocal(addrMe);
         }
-
+		
         // Disconnect if we connected to ourself
         if (nNonce == nLocalHostNonce && nNonce > 1)
         {
@@ -3019,6 +3025,7 @@ bool ProcessMessages(CNode* pfrom)
 
     loop
     {
+                
         // Don't bother if send buffer is too full to respond anyway
         if (pfrom->vSend.size() >= SendBufferSize())
             break;
